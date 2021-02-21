@@ -21,6 +21,7 @@ class PEImage
 	uintptr_t entry_point;
 
 	uintptr_t resolveRVA(uintptr_t RVA);
+	uintptr_t getExport(HMODULE library_handle, uint32_t biased_ordinal);
 
 public:
 	PEImage(uintptr_t* buffer);

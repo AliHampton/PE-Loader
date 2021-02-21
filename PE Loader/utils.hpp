@@ -7,4 +7,4 @@
 
 LPCWSTR convertStr(char* str);
 
-std::vector<uint8_t> getFile(LPCSTR fileName);
+std::vector<byte> getFile(LPCSTR fileName);

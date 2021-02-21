@@ -9,16 +9,16 @@ LPCWSTR convertStr(char* str)
 	return LPCWSTR(wcstring);
 }
 
-std::vector<uint8_t> getFile(LPCSTR fileName)
+std::vector<byte> getFile(LPCSTR fileName)
 {
 	std::ifstream file(fileName, std::ios::in | std::ios::binary | std::ios::ate);
-	std::vector<uint8_t> contents;
+	std::vector<byte> contents;
 	if (file.is_open())
 	{
 		file.unsetf(std::ios::skipws);
 		file.seekg(0, std::ios::beg);
 		contents.reserve(file.tellg());
-		contents.insert(contents.begin(), std::istream_iterator<uint8_t>(file), std::istream_iterator<uint8_t>());
+		contents.insert(contents.begin(), std::istream_iterator<byte>(file), std::istream_iterator<byte>());
 		file.close();
 	}
 	return contents;
